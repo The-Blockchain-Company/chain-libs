@@ -1,0 +1,26 @@
+[package]
+name = "imhamt"
+version = "0.1.0"
+authors = ["Vincent Hanquez <vincent.hanquez@blockchain-company.io>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+thiserror = "1.0"
+
+[dev-dependencies]
+criterion = "0.3.0"
+proptest = { git = "https://github.com/The-Blockchain-Company/proptest.git" }
+test-strategy = "0.1"
+
+[target.'cfg(unix)'.dev-dependencies]
+jemalloc-ctl = "0.3"
+jemallocator = "*"
+
+[[example]]
+name = "memdump"
+path = "examples/memdump/main.rs"
+
+[[bench]]
+harness = false
+name = "imhamt"

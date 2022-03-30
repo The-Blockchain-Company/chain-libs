@@ -1,0 +1,9 @@
+[package]
+name = "sparse-array"
+version = "0.1.0"
+authors = ["Yevhenii Babichenko <eugene.babichenko@blockchain-company.io>"]
+edition = "2021"
+
+[dev-dependencies]
+proptest = { git = "https://github.com/The-Blockchain-Company/proptest.git" }
+test-strategy = "0.1"
