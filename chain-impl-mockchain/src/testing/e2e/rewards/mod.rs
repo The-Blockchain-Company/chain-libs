@@ -637,7 +637,7 @@ pub fn rewards_owner_of_many_stake_pool() {
     let bob = controller.wallet("Bob").unwrap();
     let clarice = controller.wallet("Clarice").unwrap();
 
-    let total_ada_before = ledger.total_funds();
+    let total_bcc_before = ledger.total_funds();
 
     let second_alice_stake_pool = StakePoolBuilder::new()
         .with_owners(vec![alice.public_key()])
@@ -674,7 +674,7 @@ pub fn rewards_owner_of_many_stake_pool() {
         .and()
         .has_remaining_rewards_equals_to(&Value(901));
 
-    ledger_verifier.total_value_is(&total_ada_before);
+    ledger_verifier.total_value_is(&total_bcc_before);
 
     // check owner account (10 from rewards - 3 from register stake pool fee)
     ledger_verifier
@@ -721,7 +721,7 @@ pub fn rewards_delegators_of_many_stake_pool() {
     let david = controller.wallet("David").unwrap();
     let eve = controller.wallet("Eve").unwrap();
 
-    let total_ada_before = ledger.total_funds();
+    let total_bcc_before = ledger.total_funds();
 
     controller
         .delegates_to_many(
@@ -757,7 +757,7 @@ pub fn rewards_delegators_of_many_stake_pool() {
         .and()
         .has_remaining_rewards_equals_to(&Value(901));
 
-    ledger_verifier.total_value_is(&total_ada_before);
+    ledger_verifier.total_value_is(&total_bcc_before);
 
     // check owner account (94 from rewards - 3 from register stake pool fee)
     ledger_verifier

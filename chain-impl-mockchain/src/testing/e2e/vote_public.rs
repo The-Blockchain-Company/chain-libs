@@ -538,11 +538,11 @@ pub fn votes_with_fees() {
         .pots()
         .has_remaining_rewards_equals_to(&Value(initial_rewards + rewards_add));
 
-    let expected_ada_after = total_ada_before.saturating_add(Value(rewards_add));
+    let expected_bcc_after = total_bcc_before.saturating_add(Value(rewards_add));
 
     LedgerStateVerifier::new(ledger.into())
         .info("total value is the same")
-        .total_value_is(&expected_ada_after);
+        .total_value_is(&expected_bcc_after);
 }
 
 #[test]

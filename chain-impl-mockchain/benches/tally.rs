@@ -286,20 +286,20 @@ fn tally_benchmark_flat_distribution(
     );
 }
 
-fn tally_benchmark_128_voters_1000_ada(c: &mut Criterion) {
-    tally_benchmark_flat_distribution("128_voters_1000_ada", 128, 1000, c);
+fn tally_benchmark_128_voters_1000_bcc(c: &mut Criterion) {
+    tally_benchmark_flat_distribution("128_voters_1000_bcc", 128, 1000, c);
 }
 
-fn tally_benchmark_200_voters_1000_ada(c: &mut Criterion) {
-    tally_benchmark_flat_distribution("200_voters_1000_ada", 200, 1000, c);
+fn tally_benchmark_200_voters_1000_bcc(c: &mut Criterion) {
+    tally_benchmark_flat_distribution("200_voters_1000_bcc", 200, 1000, c);
 }
 
-fn tally_benchmark_200_voters_1_000_000_ada(c: &mut Criterion) {
-    tally_benchmark_flat_distribution("200_voters_1_000_000_ada", 200, 1_000_000, c);
+fn tally_benchmark_200_voters_1_000_000_bcc(c: &mut Criterion) {
+    tally_benchmark_flat_distribution("200_voters_1_000_000_bcc", 200, 1_000_000, c);
 }
 
-fn tally_benchmark_1000_voters_1000_ada(c: &mut Criterion) {
-    tally_benchmark_flat_distribution("1000_voters_1000_ada", 1000, 1000, c);
+fn tally_benchmark_1000_voters_1000_bcc(c: &mut Criterion) {
+    tally_benchmark_flat_distribution("1000_voters_1000_bcc", 1000, 1000, c);
 }
 
 struct FundDistribution {
@@ -385,10 +385,10 @@ fn tally_benchmark_fund4_scenario(c: &mut Criterion) {
 
 criterion_group!(
     fast_bench,
-    tally_benchmark_128_voters_1000_ada,
-    tally_benchmark_200_voters_1000_ada,
-    tally_benchmark_200_voters_1_000_000_ada,
-    tally_benchmark_1000_voters_1000_ada,
+    tally_benchmark_128_voters_1000_bcc,
+    tally_benchmark_200_voters_1000_bcc,
+    tally_benchmark_200_voters_1_000_000_bcc,
+    tally_benchmark_1000_voters_1000_bcc,
 );
 criterion_group!(
     big_bench,
